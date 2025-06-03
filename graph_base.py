@@ -97,7 +97,7 @@ def generate_points_on_cylinder(args):
     # 转换为 NumPy 数组并返回
     return np.array(points) + np.array([0, 0, c_h])
 
-def read_gray_mtr():
+def read_gray_mtr(dir_path):
     """
     读取包含gray_mtr变量的MAT文件
     参数：
@@ -106,7 +106,7 @@ def read_gray_mtr():
     返回：
         gray_mtr  : 灰度矩阵数据（numpy数组）
     """
-    file_path = 'dragon.mat'
+    file_path = dir_path + '/dragon.mat'
     mat_data = scipy.io.loadmat(file_path)
 
     # 处理MATLAB与numpy的维度存储差异
@@ -140,7 +140,7 @@ def read_gray_mtr():
 
 def read_stl(fname):
     # 1. 读取 STL 网格
-    mesh = o3d.io.read_triangle_mesh("./3dmodel/" + fname)
+    mesh = o3d.io.read_triangle_mesh("./models/" + fname)
 
     # 检查是否读取成功
     if not mesh.has_triangles():

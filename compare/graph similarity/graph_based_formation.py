@@ -115,7 +115,7 @@ if __name__ == "__main__":
     # 记录开始时间
     start_time = time.time()
     # 生成期望编队（圆形布局，对应图3示例）
-    img = cv2.imread('dragon.jpeg', cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread('../../models/dragon.jpeg', cv2.IMREAD_GRAYSCALE)
     img = cv2.resize(img, (20, 20), interpolation=cv2.INTER_NEAREST)
     _, img_bin = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
     data = img_bin.astype(bool)
@@ -136,7 +136,6 @@ if __name__ == "__main__":
     desired_positions = np.array(desired_positions.tolist() + [[65, -10], [-90, 20.5], [90,15], [-98, -98], [-5, 5]], dtype=float)
     # 生成带噪声的初始位置（模拟实际环境扰动）
     print('长度: ', len(desired_positions))
-    input()
     current_positions = settings.gen_settings(np.array([0, 0]), len(desired_positions)-5)[:, :2]
     current_positions = np.array(current_positions.tolist() + [[65, -10], [-90, 20.5], [90,15], [-98, -98], [-5, 5]], dtype=float)
     # 轨迹记录与优化过程（对应论文IV.C节优化流程）
@@ -226,17 +225,17 @@ if __name__ == "__main__":
     total_time = end_time - start_time
     t = 'dragon'
     print(f"总运行时间: {total_time:.2f} s")
-    with open(f'./data/run_data/sci_time_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/sci_time_{t}.json', 'w+') as f:
         f.write(str(time_rec))
-    with open(f'./data/run_data/sci_move_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/sci_move_{t}.json', 'w+') as f:
         f.write(str(total_move_rec))
-    with open(f'./data/run_data/sci_cover_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/sci_cover_{t}.json', 'w+') as f:
         f.write(str(cover_rec))
-    with open(f'./data/run_data/sci_uniform_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/sci_uniform_{t}.json', 'w+') as f:
         f.write(str(uniform_rec))
-    with open(f'./data/run_data/sci_dist_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/sci_dist_{t}.json', 'w+') as f:
         f.write(str(min_d_rec))
-    with open(f'./data/run_data/sci_pos_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/sci_pos_{t}.json', 'w+') as f:
         f.write(str(history))
 
 

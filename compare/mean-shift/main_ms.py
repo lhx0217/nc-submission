@@ -86,7 +86,7 @@ def run_uavs(uav_list, init_state, sim, rounds=1000):
 
 
 def run():
-    graph = read_gray_mtr()
+    graph = read_gray_mtr('../../models')
     graph_color = [1] * len(graph)
     pos_set = np.array(settings.gen_settings([0,0], 200))
     inform_list = [random.randint(0, len(pos_set)) for _ in range(int(len(pos_set) / 3))]

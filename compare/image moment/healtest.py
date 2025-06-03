@@ -338,7 +338,7 @@ def read_gray_mtr():
     # # 处理MATLAB与numpy的维度存储差异
     # data = np.transpose(mat_data['gray_mtr'])
     # print(data.shape)
-    img = cv2.imread('./dragon.jpeg', cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread('../../models/dragon.jpeg', cv2.IMREAD_GRAYSCALE)
     img = cv2.resize(img, (18, 18), interpolation=cv2.INTER_NEAREST)
     _, img_bin = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
     data = img_bin.astype(bool)
@@ -395,19 +395,19 @@ if __name__ == "__main__":
         print(f'============={iter}==============')
         print('error: ', error)
     t = 'dragon'
-    with open(f'../data/run_data/heal_time_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/heal_time_{t}.json', 'w+') as f:
         f.write(str(time_rec))
-    with open(f'../data/run_data/heal_move_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/heal_move_{t}.json', 'w+') as f:
         f.write(str(total_move_rec))
-    with open(f'../data/run_data/heal_dist_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/heal_dist_{t}.json', 'w+') as f:
         f.write(str(min_dis_rec))
-    with open(f'../data/run_data/heal_enter_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/heal_enter_{t}.json', 'w+') as f:
         f.write(str(enter_rate))
-    with open(f'../data/run_data/heal_cover_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/heal_cover_{t}.json', 'w+') as f:
         f.write(str(cover_rate))
-    with open(f'../data/run_data/heal_uniform_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/heal_uniform_{t}.json', 'w+') as f:
         f.write(str(uniform_rate))
-    with open(f'../data/run_data/heal_pos_{t}.json', 'w+') as f:
+    with open(f'../../data/run_data/heal_pos_{t}.json', 'w+') as f:
         f.write(str(pos_rec))
     # 绘制结果对比
     plot_comparison(target, s, M_target, max_order)
