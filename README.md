@@ -1,6 +1,6 @@
 # 🧠 Bubble-Raft Inspired Shape-Assembly in Flying Robot Swarm  
 **Simulation Codebase (Core-Only Version)**  
-*For submission to Nature Communications*
+*For submission to Nature Machine Intelligence*
 
 ---
 

@@ -102,7 +102,7 @@ def consensus_square(N):
     print("Desired positions:", desire_pos)
     adj_matrix = generate_topology(N + 1)  # 邻接矩阵
     print("Adjacency matrix:", adj_matrix)
-    # desire_pos, row_ind, col_ind = optimal_assignment(pos_rec, desire_pos)
+    desire_pos, row_ind, col_ind = optimal_assignment(pos_rec, desire_pos)
     # 设置绘图
     # plt.ion()  # 打开交互模式
     fig, ax = plt.subplots()
